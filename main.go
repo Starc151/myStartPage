@@ -1,13 +1,16 @@
 package main
 
 import (
+    "html/template"
     "net/http"
     "os"
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("<!doctype html><head><title>asd</title></head><body><button>Найти</button></body></html>"))
+    tpl := template.Must(template.ParseFiles("index.html"))
+    tpl.Execute(w, nil)
 }
+
 
 func main() {
     port := os.Getenv("PORT")
@@ -16,6 +19,8 @@ func main() {
     }
 
     mux := http.NewServeMux()
+    fs := http.FileServer(http.Dir("css"))
+    mux.Handle("/css/", http.StripPrefix("/css/", fs))
 
     mux.HandleFunc("/", indexHandler)
     http.ListenAndServe(":"+port, mux)
