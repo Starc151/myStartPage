@@ -1,16 +1,22 @@
-html, body {
-    height: 100%;
-    background-color: #19191A;
-}
-body {
+* {
     margin: 0;
+    padding: 0;
+}
+  
+body {  
+    font-family: 'Lato', sans-serif;
+    /* background-color: #19191A; */
 }
 
-.form {
-    height: 100%;
-    padding: 0;
-    margin: 0;
+.my-flex-cont {
     display: flex;
-    align-items: center;
+    flex-flow: column wrap-reverse;
     justify-content: center;
-}
+    align-items: center;
+    height: 100px;
+   }
+   .my-flex-box {
+    padding: 5px;
+    flex: 0 0.5 0;
+    align-self: center;
+   }
