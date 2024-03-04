@@ -5,18 +5,34 @@
   
 body {  
     font-family: 'Lato', sans-serif;
-    /* background-color: #19191A; */
+    background-color: #19191A;
 }
 
-.my-flex-cont {
+.main {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-    flex-flow: column wrap-reverse;
-    justify-content: center;
     align-items: center;
-    height: 100px;
-   }
-   .my-flex-box {
-    padding: 5px;
-    flex: 0 0.5 0;
-    align-self: center;
-   }
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+a {
+    color: aquamarine;
+}
+
+.search {
+    width: 400px;
+    height: 30px;
+    border-color: blue;
+    border-style: dotted;
+    color: rgb(106, 108, 112);
+    border-radius: 12px;
+}
+
+
+
